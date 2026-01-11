@@ -29,8 +29,8 @@ const server = http.createServer(app);
 app.use(helmet());
 app.use(
   cors({
-    origin: env.CLIENT_ORIGIN,
-    credentials: true
+    origin: [env.CLIENT_ORIGIN, "http://localhost:5173"],
+    credentials: true,
   })
 );
 app.use(express.json());
