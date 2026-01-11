@@ -29,7 +29,7 @@ const server = http.createServer(app);
 app.use(helmet());
 app.use(
   cors({
-    origin: [env.CLIENT_ORIGIN, "http://localhost:5173"],
+    origin: env.CLIENT_ORIGIN,
     credentials: true,
   })
 );
