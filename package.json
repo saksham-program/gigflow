@@ -1,0 +1,21 @@
+{
+  "name": "gigflow",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c green,blue \"npm:dev --workspace backend\" \"npm:dev --workspace frontend\"",
+    "lint": "npm run lint --workspace backend && npm run lint --workspace frontend",
+    "format": "prettier -w ."
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "prettier": "^3.4.2"
+  },
+  "dependencies": {
+    "browserslist": "^4.23.0",
+    "caniuse-lite": "^1.0.30001688"
+  }
+}
